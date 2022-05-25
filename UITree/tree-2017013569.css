@@ -1,0 +1,74 @@
+/*控制显示图标*/
+/*删除小圆点*/
+li
+{
+    list-style: none;
+}
+
+/*控制图标显示*/
+li.show_11 > div, li.show_10 > div
+{
+
+    display: inline;
+}
+
+/*控制图标的旋转动画*/
+li.show_11 > div > img, li.show_10 > div > img
+{
+    width: 23px;
+    height: 23px;
+    border-style: none;
+    transition: all 0.5s;
+}
+
+/*收起模式*/
+li.show_10 > div > img
+{
+    transform: none;
+
+}
+
+/*展开模式*/
+li.show_11 > div > img
+{
+    transform: rotate(90deg);
+}
+
+/*用来对齐非叶子节点和叶子节点*/
+li > span
+{
+    white-space: pre;
+}
+
+
+
+/*控制收起展开*/
+
+/*不显示的*/
+ul.show_00, ul.show_01, li.show_00, li.show_01
+
+{
+    max-height: 0;
+    visibility: hidden;
+}
+
+/*正常显示的*/
+ul.show_10, ul.show_11, li.show_10, li.show_11
+{
+    max-height: 10000;
+    visibility: visible;
+    /*-webkit-transition: max-height 1s;*/
+    transition: max-height 2s, visibility 1s;
+
+}
+
+/*收起展开动画*/
+ul,li
+{
+    position: relative;
+   /* -webkit-transition: max-height .3s;*/
+    transition:  max-height 0.5s;
+}
+
+
+
